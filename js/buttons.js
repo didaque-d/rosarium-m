@@ -73,6 +73,7 @@ function valores(){
         document.getElementsByClassName('imagens')[0].style.right = '800%';
     }else if(quantidadeCliques == 9){
         document.getElementById("misterios").innerText = misterios[8];
+        document.getElementById("coroa").innerText = coroa[1];
         document.getElementsByClassName('imagens')[0].style.right = '900%';
     }else if(quantidadeCliques == 10){
         document.getElementById("misterios").innerText = misterios[9];
@@ -91,6 +92,7 @@ function valores(){
         document.getElementById("misterios").innerText = misterios[13];
         document.getElementsByClassName('imagens')[0].style.right = '1400%';
     }else if(quantidadeCliques == 15){
+        document.getElementById("coroa").innerText = coroa[2];
         document.getElementById("misterios").innerText = misterios[14];
         document.getElementsByClassName('imagens')[0].style.right = '1500%';
     }else if(quantidadeCliques == 16){
