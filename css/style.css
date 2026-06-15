@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(230, 230, 230);
+    font-family: calibri;
+    overflow: hidden;
+}
+header, nav, #navbar, .controle{
+    display: flex;
+    align-items: center;
+}
+header{
+    background-color: bisque;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 0px 0px 30px 30px;
+}
+header img{
+    max-width: 50%;
+}
+#navbar{
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+}
+nav{
+    justify-content: space-around;
+    width: 100%;
+    background-color: bisque;
+    padding: 10px;
+    margin: 0px 20px 0px 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.299);
+}
+#nav-pc{
+    display: none;
+}
+nav img{
+    min-width: 30px;
+}
+main{
+    background-color: white;
+    margin: 40px 20px 10px 20px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.300);
+    overflow: hidden;
+}
+main p{
+    
+}
+.imagens{
+    aspect-ratio: 1 / 1;
+    display: flex;
+    position: relative;
+    right: 0px;
+    transition: 1s;
+}
+.imagens img{
+    max-width: 100%;
+    margin: 20px;
+    border-radius: 20px;
+}
+.controle{
+    justify-content: space-evenly;
+}
+.controle button{
+    width: 40%;
+    height: 50px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.299);
+    font-weight: bolder;
+}
+.controle button:hover{
+    background-color: bisque;
+}
+
+@media screen and (min-width: 1080px) {
+    
+    header img{
+        max-width: 15%;
+    }
+    main{
+        margin: 20px 500px 20px 500px;
+    }
+    .controle{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 60%;
+        top: 40%;
+        width: 40%;
+    }
+    .controle button{
+        margin: 10px;
+    }
+    #nav-mobile{
+        display: none;
+    }
+    #nav-pc, header{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 0px;
+        box-shadow: none;
+        margin: 0;
+    }
+}
