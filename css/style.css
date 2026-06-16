@@ -79,6 +79,12 @@ main p{
 .controle button:hover{
     background-color: bisque;
 }
+#btnAvancar{
+    color: green;
+}
+#btnVoltar{
+    color: red;
+}
 
 @media screen and (min-width: 1080px) {
     
