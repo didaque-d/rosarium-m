@@ -1,11 +1,12 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     background-color: rgb(230, 230, 230);
     font-family: calibri;
-    overflow: hidden;
+    
 }
 header, nav, #navbar, .controle{
     display: flex;
@@ -13,9 +14,12 @@ header, nav, #navbar, .controle{
 }
 header{
     background-color: bisque;
-    justify-content: center;
+    text-align: center;
     padding: 10px;
     border-radius: 0px 0px 30px 30px;
+}
+header a{
+    width: 100%;
 }
 header img{
     max-width: 50%;
@@ -49,9 +53,6 @@ main{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.300);
     overflow: hidden;
 }
-main p{
-    
-}
 .imagens{
     aspect-ratio: 1 / 1;
     display: flex;
@@ -66,6 +67,7 @@ main p{
 }
 .controle{
     justify-content: space-evenly;
+    margin-top: 40px;
 }
 .controle button{
     width: 40%;
@@ -76,10 +78,67 @@ main p{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.299);
     font-weight: bolder;
 }
+#btnAvancar{
+    color: green;
+}
+#btnVoltar{
+    color: red;
+}
 .controle button:hover{
     background-color: bisque;
 }
-
+#tela-lista{
+    margin-bottom: 10dvh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+#tela-lista input{
+    height: 30px;
+}
+#tela-lista ul{
+    border: 1px solid black;
+    width: 90%;
+    padding: 5px;
+}
+#anotar{
+    border: 1px solid black;
+    width: 100%;
+    padding: 5px;
+    display: none;
+}
+blockquote::first-line{
+    font-weight: bolder;
+}
+#btnSalvar, #btnApagar{
+    width: 40%;
+    height: 40px;
+    margin: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.299);
+    font-weight: bolder;
+    color: green;
+}
+#btnApagar{
+    color: red;
+}
+blockquote{
+    color: gray;
+}
+#tela-sobre{
+    display: none;
+    text-align: justify;
+}
+.oracoes{
+    margin-top: 10px;
+    background-color: rgb(230, 230, 230);
+    padding: 10px;
+    border-radius: 20px;
+}
 @media screen and (min-width: 1080px) {
     
     header img{
@@ -111,5 +170,17 @@ main p{
         border-radius: 0px;
         box-shadow: none;
         margin: 0;
+    }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 3.0) {
+    main{
+        margin-top: 10px;
+        height: 60dvh;
+    }
+    .imagens img{
+        max-width: 100%;
+    }
+    header img{
+        max-width: 40%;
     }
 }

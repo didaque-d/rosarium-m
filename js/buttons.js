@@ -73,6 +73,7 @@ function valores(){
         document.getElementsByClassName('imagens')[0].style.right = '800%';
     }else if(quantidadeCliques == 9){
         document.getElementById("misterios").innerText = misterios[8];
+        document.getElementById("coroa").innerText = coroa[1];
         document.getElementsByClassName('imagens')[0].style.right = '900%';
     }else if(quantidadeCliques == 10){
         document.getElementById("misterios").innerText = misterios[9];
@@ -91,6 +92,7 @@ function valores(){
         document.getElementById("misterios").innerText = misterios[13];
         document.getElementsByClassName('imagens')[0].style.right = '1400%';
     }else if(quantidadeCliques == 15){
+        document.getElementById("coroa").innerText = coroa[2];
         document.getElementById("misterios").innerText = misterios[14];
         document.getElementsByClassName('imagens')[0].style.right = '1500%';
     }else if(quantidadeCliques == 16){
@@ -112,4 +114,49 @@ function valores(){
         document.getElementById("misterios").innerText = "Anúncio do Anjo";
         document.getElementsByClassName('imagens')[0].style.right = '0%';
     }
+}
+function mostrarTela1(){
+    document.getElementById("inicio").style.display = "block";
+    document.getElementsByClassName('controle')[0].style.display = "flex";
+    document.getElementById("tela-lista").style.display = "none";
+    document.getElementById("tela-sobre").style.display = "none";
+}
+function mostrarTela2(){
+    document.getElementById("inicio").style.display = "none";
+    document.getElementsByClassName('controle')[0].style.display = "none";
+    document.getElementById("tela-lista").style.display = "flex";
+    document.getElementById("tela-sobre").style.display = "none";
+}
+function mostrarTela3(){
+    document.getElementById("inicio").style.display = "none";
+    document.getElementsByClassName('controle')[0].style.display = "none";
+    document.getElementById("tela-lista").style.display = "none";
+    document.getElementById("tela-sobre").style.display = "block";
+
+}
+const lista = [];
+let index = 0;
+function guardar(){
+    index++;
+    const texto = document.getElementById("txt").value;
+    if(texto != ""){
+         lista.push(texto);
+         document.getElementById("anotar").style.display = "block";
+         document.getElementById("anotar").innerHTML = lista[index - 1];
+         document.getElementById("citar").innerHTML ="Reze, espere e não se preocupe! <br> - São Padre Pio";
+         console.log(index);
+         console.log(lista);
+        
+    }else{
+        alert("Escreva alguma intenção!");
+    }
+}
+function remover(){
+    if(index > 0){
+        index--;
+    }
+    lista.pop();
+    document.getElementById("anotar").innerHTML = "";
+    console.log(lista);
+    console.log(index);
 }
