@@ -142,8 +142,10 @@ function guardar(){
     if(texto != ""){
          lista.push(texto);
          document.getElementById("anotar").style.display = "block";
-         document.getElementById("anotar").innerHTML = lista[index - 1];
+         
+         document.getElementById("anotar").innerHTML += `<li>${lista[index - 1]} </li>`;
          document.getElementById("citar").innerHTML ="Reze, espere e não se preocupe! <br> - São Padre Pio";
+
          console.log(index);
          console.log(lista);
         
@@ -157,6 +159,9 @@ function remover(){
     }
     lista.pop();
     document.getElementById("anotar").innerHTML = "";
+    for(i = 0; i < index; i++){
+        document.getElementById("anotar").innerHTML += `<li>${lista[i]} </li>`;
+    }
     console.log(lista);
     console.log(index);
 }
