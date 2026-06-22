@@ -159,10 +159,8 @@ function remover(){
     lista.pop();
     document.getElementById("anotar").innerHTML = "";
     for(i = 0; i < index; i++){
-        document.getElementById("anotar").innerHTML += `<li>${lista[index - 1]} </li>`;
+        document.getElementById("anotar").innerHTML += `<li>${lista[i]} </li>`;
     }
-        
-    
     console.log(lista);
     console.log(index);
 }
