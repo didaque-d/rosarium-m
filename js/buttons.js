@@ -1,9 +1,3 @@
-// Tenta buscar o texto salvo. Se não existir, define como um array vazio em formato de texto '[]'
-const dadosSalvos = localStorage.getItem("minhaLista") || "[]";
-
-// Transforma o texto de volta em um array real do JavaScript
-let lista = JSON.parse(dadosSalvos);
-
 const misterios = [
     "Maria visita Isabel",
     "Nascimento de Jesus",
@@ -152,8 +146,6 @@ function guardar(){
          document.getElementById("anotar").innerHTML += `<li>${lista[index - 1]} </li>`;
          document.getElementById("citar").innerHTML ="Reze, espere e não se preocupe! <br> - São Padre Pio";
 
-         // Transforma o array em texto e salva no localStorage sob a chave "minhaLista"
-        localStorage.setItem("minhaLista", JSON.stringify(lista));
          console.log(index);
          console.log(lista);
         
@@ -170,8 +162,6 @@ function remover(){
     for(i = 0; i < index; i++){
         document.getElementById("anotar").innerHTML += `<li>${lista[i]} </li>`;
     }
-    // Transforma o array em texto e salva no localStorage sob a chave "minhaLista"
-    localStorage.setItem("minhaLista", JSON.stringify(lista));
     console.log(lista);
     console.log(index);
 }
