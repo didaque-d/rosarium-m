@@ -118,6 +118,7 @@ function valores(){
 }
 function retroceder(){
     quantidadeCliques = 0;
+    document.getElementsByClassName('ocultar')[0].style.display = "none";
     valores();
 }
 function mostrarTela1(){
