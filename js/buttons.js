@@ -48,6 +48,7 @@ function valores(){
     if(quantidadeCliques == 1){
         document.getElementById("misterios").innerText = misterios[0];
         document.getElementsByClassName('imagens')[0].style.right = '100%';
+        document.getElementsByClassName('ocultar')[0].style.display = "block";
     }else if(quantidadeCliques == 2){
         document.getElementById("misterios").innerText = misterios[1];
         document.getElementsByClassName('imagens')[0].style.right = '200%';
@@ -114,6 +115,10 @@ function valores(){
         document.getElementById("misterios").innerText = "Anúncio do Anjo";
         document.getElementsByClassName('imagens')[0].style.right = '0%';
     }
+}
+function retroceder(){
+    quantidadeCliques = 0;
+    valores();
 }
 function mostrarTela1(){
     document.getElementById("inicio").style.display = "block";

@@ -8,7 +8,7 @@ body{
     font-family: calibri;
     
 }
-header, nav, #navbar, .controle{
+header, nav, #navbar, .controle, .controle a{
     display: flex;
     align-items: center;
 }
@@ -84,6 +84,7 @@ main{
 #btnVoltar{
     color: red;
 }
+
 .controle button:hover{
     background-color: bisque;
 }
@@ -94,6 +95,9 @@ main{
     align-items: center;
     flex-direction: column;
     gap: 5px;
+}
+#tela-lista h2{
+    margin: 10px;
 }
 #tela-lista input{
     height: 30px;
@@ -143,6 +147,15 @@ blockquote{
     padding: 10px;
     border-radius: 20px;
     text-align: center;
+    font-weight: bolder;
+    color: brown;
+}
+.ocultar{
+    display: none;
+    background-color: white;
+    padding: 5px;
+    border-radius: 1pc;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.299);
 }
 @media screen and (min-width: 1080px) {
     
