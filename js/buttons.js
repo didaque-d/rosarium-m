@@ -49,71 +49,92 @@ function valores(){
         document.getElementById("misterios").innerText = misterios[0];
         document.getElementsByClassName('imagens')[0].style.right = '100%';
         document.getElementsByClassName('ocultar')[0].style.display = "block";
+        atualizarBarra(5);
     }else if(quantidadeCliques == 2){
         document.getElementById("misterios").innerText = misterios[1];
         document.getElementsByClassName('imagens')[0].style.right = '200%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 3){
         document.getElementById("misterios").innerText = misterios[2];
         document.getElementsByClassName('imagens')[0].style.right = '300%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 4){
         document.getElementById("misterios").innerText = misterios[3];
         document.getElementById("coroa").innerText = coroa[0];
         document.getElementsByClassName('imagens')[0].style.right = '400%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 5){
         document.getElementById("misterios").innerText = misterios[4];
         document.getElementById("coroa").innerText = coroa[1];
         document.getElementsByClassName('imagens')[0].style.right = '500%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 6){
         document.getElementById("misterios").innerText = misterios[5];
         document.getElementsByClassName('imagens')[0].style.right = '600%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 7){
         document.getElementById("misterios").innerText = misterios[6];
         document.getElementsByClassName('imagens')[0].style.right = '700%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 8){
         document.getElementById("misterios").innerText = misterios[7];
         document.getElementsByClassName('imagens')[0].style.right = '800%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 9){
         document.getElementById("misterios").innerText = misterios[8];
         document.getElementById("coroa").innerText = coroa[1];
         document.getElementsByClassName('imagens')[0].style.right = '900%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 10){
         document.getElementById("misterios").innerText = misterios[9];
         document.getElementById("coroa").innerText = coroa[2];
         document.getElementsByClassName('imagens')[0].style.right = '1000%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 11){
         document.getElementById("misterios").innerText = misterios[10];
         document.getElementsByClassName('imagens')[0].style.right = '1100%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 12){
         document.getElementById("misterios").innerText = misterios[11];
         document.getElementsByClassName('imagens')[0].style.right = '1200%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 13){
         document.getElementById("misterios").innerText = misterios[12];
         document.getElementsByClassName('imagens')[0].style.right = '1300%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 14){
         document.getElementById("misterios").innerText = misterios[13];
         document.getElementsByClassName('imagens')[0].style.right = '1400%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 15){
         document.getElementById("coroa").innerText = coroa[2];
         document.getElementById("misterios").innerText = misterios[14];
         document.getElementsByClassName('imagens')[0].style.right = '1500%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 16){
         document.getElementById("misterios").innerText = misterios[15];
         document.getElementById("coroa").innerText = coroa[3];
         document.getElementsByClassName('imagens')[0].style.right = '1600%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 17){
         document.getElementById("misterios").innerText = misterios[16];
         document.getElementsByClassName('imagens')[0].style.right = '1700%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 18){
         document.getElementById("misterios").innerText = misterios[17];
         document.getElementsByClassName('imagens')[0].style.right = '1800%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 19){
         document.getElementById("misterios").innerText = misterios[18];
         document.getElementsByClassName('imagens')[0].style.right = '1900%';
+        atualizarBarra(5);
     }else if(quantidadeCliques == 20){
         document.getElementById("misterios").innerText = "Rosário Concluído!";
+        atualizarBarra(5);
     }else if(quantidadeCliques == 0){
         document.getElementById("misterios").innerText = "Anúncio do Anjo";
         document.getElementsByClassName('imagens')[0].style.right = '0%';
+        atualizarBarra(5);
     }
 }
 function retroceder(){
@@ -170,4 +191,17 @@ function remover(){
     }
     console.log(lista);
     console.log(index);
+}
+
+function atualizarBarra(valor){
+    valor = 5 * quantidadeCliques;
+    document.getElementById("barra-progresso").style.width = valor + "%";
+    if(quantidadeCliques == 20){
+        document.getElementById("barra").style.borderColor = "green";
+        document.getElementById("barra-progresso").style.backgroundColor = "green";
+    }
+    else{
+        document.getElementById("barra").style.borderColor = "lightskyblue";
+        document.getElementById("barra-progresso").style.backgroundColor = "lightskyblue";
+    }
 }

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --cor-de-fundo: #a59871;
 }
 body{
     background-color: rgb(230, 230, 230);
@@ -13,7 +14,7 @@ header, nav, #navbar, .controle, .controle a{
     align-items: center;
 }
 header{
-    background-color: bisque;
+    background-color: var(--cor-de-fundo);
     text-align: center;
     padding: 10px;
     border-radius: 0px 0px 30px 30px;
@@ -23,6 +24,7 @@ header a{
 }
 header img{
     max-width: 50%;
+    filter: invert(100);
 }
 #navbar{
     position: fixed;
@@ -32,7 +34,7 @@ header img{
 nav{
     justify-content: space-around;
     width: 100%;
-    background-color: bisque;
+    background-color: var(--cor-de-fundo);
     padding: 10px;
     margin: 0px 20px 0px 20px;
     border-radius: 20px;
@@ -43,10 +45,11 @@ nav{
 }
 nav img{
     min-width: 30px;
+    filter: invert(100);
 }
 main{
     background-color: white;
-    margin: 40px 20px 10px 20px;
+    margin: 5% 20px 10px 20px;
     text-align: center;
     border-radius: 20px;
     padding: 10px;
@@ -86,7 +89,7 @@ main{
 }
 
 .controle button:hover{
-    background-color: bisque;
+    background-color: var(--cor-de-fundo);
 }
 #tela-lista{
     margin-bottom: 10dvh;
@@ -159,11 +162,18 @@ blockquote{
 }
 @media screen and (min-width: 1080px) {
     
+    body{
+        overflow: hidden;
+    }
+    nav{
+        padding: 5px;
+    }
     header img{
-        max-width: 15%;
+        max-width: 10%;
     }
     main{
-        margin: 20px 500px 20px 500px;
+        margin: 10px 500px 20px 500px;
+        max-width: auto;
     }
     .controle{
         display: flex;
@@ -201,4 +211,17 @@ blockquote{
     header img{
         max-width: 40%;
     }
+}
+
+#barra{
+    border: 1px solid lightskyblue;
+    padding: 5px;
+    border-radius: 20px;
+}
+#barra-progresso{
+    background-color: lightskyblue;
+    width: 5%;
+    padding: 3px;
+    border-radius: 20px;
+    transition: 1s;
 }
