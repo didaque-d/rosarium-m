@@ -18,6 +18,11 @@ header{
     text-align: center;
     padding: 10px;
     border-radius: 0px 0px 30px 30px;
+    animation: intro 2s forwards;
+    animation-delay: 2s;
+    height: 110dvh;
+    position: relative;
+    z-index: 1;
 }
 header a{
     width: 100%;
@@ -159,6 +164,15 @@ blockquote{
     padding: 5px;
     border-radius: 1pc;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.299);
+}
+
+@keyframes intro {
+    from{
+        height: 100dvh;
+    }
+    to{
+        height: 10dvh;
+    }
 }
 @media screen and (min-width: 1080px) {
     
