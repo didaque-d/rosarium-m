@@ -34,9 +34,14 @@ function avancar() {
     if(quantidadeCliques < 20){
         quantidadeCliques++;
         console.log(quantidadeCliques);
-        valores();
         atualizarBarra(5);
     }
+    if(quantidadeCliques % 5 == 0 && quantidadeCliques < 20){
+            qtdCoroa++;
+            document.getElementById("coroa").innerHTML = coroa[qtdCoroa];
+            console.log(qtdCoroa);
+        }
+        atualizarTela();
 }
 
 function voltar() {
@@ -44,19 +49,28 @@ function voltar() {
         quantidadeCliques--;
         console.log(quantidadeCliques);
     }
-}
-function valores(){
-        let posicao = quantidadeCliques * 100;
-        document.getElementsByClassName('imagens')[0].style.right = posicao + '%';
-        console.log(posicao);
-        if(quantidadeCliques % 5 == 0 && quantidadeCliques < 20){
-            document.getElementById("coroa").innerHTML = coroa[qtdCoroa];
-            qtdCoroa++;
-            console.log(qtdCoroa);
-        }
-        document.getElementById("misterios").innerHTML = misterios[quantidadeCliques];
+    if(quantidadeCliques == 4){
+        qtdCoroa = 0;
+    }else if(quantidadeCliques == 9){
+        qtdCoroa = 1
+    }
+    else if(quantidadeCliques == 14){
+        qtdCoroa = 2;
+    }
 
-        if(quantidadeCliques == 1){
+    atualizarTela();
+    atualizarBarra();
+}
+
+function atualizarTela(){
+    let posicao = quantidadeCliques * 100;
+    document.getElementById("misterios").innerHTML = misterios[quantidadeCliques];
+    document.getElementById("coroa").innerHTML = coroa[qtdCoroa];
+    if(quantidadeCliques < 20){
+            document.getElementsByClassName('imagens')[0].style.right = posicao + '%';
+        }
+    console.log(posicao);
+    if(quantidadeCliques == 1){
             document.getElementsByClassName('ocultar')[0].style.display = 'block';
         }
 }
@@ -64,8 +78,8 @@ function retroceder(){
     quantidadeCliques = 0;
     qtdCoroa = 0;
     document.getElementsByClassName('ocultar')[0].style.display = "none";
-    valores();
     atualizarBarra();
+    atualizarTela();
 }
 function mostrarTela1(){
     document.getElementById("inicio").style.display = "block";
@@ -86,6 +100,7 @@ function mostrarTela3(){
     document.getElementById("tela-sobre").style.display = "block";
 
 }
+//lógica da lista
 const lista = [];
 let index = 0;
 function guardar(){
