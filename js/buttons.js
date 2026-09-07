@@ -30,12 +30,12 @@ const coroa = [
 let quantidadeCliques = 0;
 let qtdCoroa = 0;
 
-function verificarMultiplo(){
+function verificarMultiplo() {
     return quantidadeCliques % 5 === 0;
 }
 
 function avancar() {
-    if(quantidadeCliques < 20){
+    if (quantidadeCliques < 20) {
         quantidadeCliques++;
         console.log(quantidadeCliques);
         document.getElementById('misterios').innerHTML = misterios[quantidadeCliques];
@@ -43,7 +43,7 @@ function avancar() {
         atualizarTela();
     }
     const multiplo = verificarMultiplo();
-    if(multiplo && quantidadeCliques < 20){
+    if (multiplo && quantidadeCliques < 20) {
         qtdCoroa++;
         document.getElementById('coroa').innerHTML = coroa[qtdCoroa];
     }
@@ -51,13 +51,13 @@ function avancar() {
 
 function voltar() {
 
-    if(quantidadeCliques > 0){
+    if (quantidadeCliques > 0) {
         quantidadeCliques--;
         document.getElementById('misterios').innerHTML = misterios[quantidadeCliques];
         console.log(quantidadeCliques);
     }
     const multiplo = verificarMultiplo();
-    if(multiplo && quantidadeCliques > 0){
+    if (multiplo && quantidadeCliques > 0) {
         qtdCoroa--;
         document.getElementById('coroa').innerHTML = coroa[qtdCoroa];
     }
@@ -65,38 +65,38 @@ function voltar() {
     atualizarBarra();
 }
 //teste
-function atualizarTela(){
+function atualizarTela() {
     let posicao = quantidadeCliques * 100;
     document.getElementById("misterios").innerHTML = misterios[quantidadeCliques];
     document.getElementById("coroa").innerHTML = coroa[qtdCoroa];
-    if(quantidadeCliques < 20){
-            document.getElementsByClassName('imagens')[0].style.right = posicao + '%';
-        }
+    if (quantidadeCliques < 20) {
+        document.getElementsByClassName('imagens')[0].style.right = posicao + '%';
+    }
     console.log(posicao);
-    if(quantidadeCliques == 1){
-            document.getElementsByClassName('ocultar')[0].style.display = 'block';
-        }
+    if (quantidadeCliques == 1) {
+        document.getElementsByClassName('ocultar')[0].style.display = 'block';
+    }
 }
-function retroceder(){
+function retroceder() {
     quantidadeCliques = 0;
     qtdCoroa = 0;
     document.getElementsByClassName('ocultar')[0].style.display = "none";
     atualizarBarra();
     atualizarTela();
 }
-function mostrarTela1(){
+function mostrarTela1() {
     document.getElementById("inicio").style.display = "block";
     document.getElementsByClassName('controle')[0].style.display = "flex";
     document.getElementById("tela-lista").style.display = "none";
     document.getElementById("tela-sobre").style.display = "none";
 }
-function mostrarTela2(){
+function mostrarTela2() {
     document.getElementById("inicio").style.display = "none";
     document.getElementsByClassName('controle')[0].style.display = "none";
     document.getElementById("tela-lista").style.display = "flex";
     document.getElementById("tela-sobre").style.display = "none";
 }
-function mostrarTela3(){
+function mostrarTela3() {
     document.getElementById("inicio").style.display = "none";
     document.getElementsByClassName('controle')[0].style.display = "none";
     document.getElementById("tela-lista").style.display = "none";
@@ -106,44 +106,44 @@ function mostrarTela3(){
 //lógica da lista
 const lista = [];
 let index = 0;
-function guardar(){
+function guardar() {
     index++;
     const texto = document.getElementById("txt").value;
-    if(texto != ""){
-         lista.push(texto);
-         document.getElementById("anotar").style.display = "block";
-         
-         document.getElementById("anotar").innerHTML += `<li>${lista[index - 1]} </li>`;
-         document.getElementById("citar").innerHTML ="Reze, espere e não se preocupe! <br> - São Padre Pio";
+    if (texto != "") {
+        lista.push(texto);
+        document.getElementById("anotar").style.display = "block";
 
-         console.log(index);
-         console.log(lista);
-        
-    }else{
+        document.getElementById("anotar").innerHTML += `<li>${lista[index - 1]} </li>`;
+        document.getElementById("citar").innerHTML = "Reze, espere e não se preocupe! <br> - São Padre Pio";
+
+        console.log(index);
+        console.log(lista);
+
+    } else {
         alert("Escreva alguma intenção!");
     }
 }
-function remover(){
-    if(index > 0){
+function remover() {
+    if (index > 0) {
         index--;
     }
     lista.pop();
     document.getElementById("anotar").innerHTML = "";
-    for(i = 0; i < index; i++){
+    for (i = 0; i < index; i++) {
         document.getElementById("anotar").innerHTML += `<li>${lista[i]} </li>`;
     }
     console.log(lista);
     console.log(index);
 }
 
-function atualizarBarra(valor){
+function atualizarBarra(valor) {
     valor = 5 * quantidadeCliques;
     document.getElementById("barra-progresso").style.width = valor + "%";
-    if(quantidadeCliques == 20){
+    if (quantidadeCliques == 20) {
         document.getElementById("barra").style.borderColor = "green";
         document.getElementById("barra-progresso").style.backgroundColor = "green";
     }
-    else{
+    else {
         document.getElementById("barra").style.borderColor = "lightskyblue";
         document.getElementById("barra-progresso").style.backgroundColor = "lightskyblue";
     }
