@@ -61,7 +61,7 @@ function voltar() {
     atualizarTela();
     atualizarBarra();
 }
-
+//teste
 function atualizarTela(){
     let posicao = quantidadeCliques * 100;
     document.getElementById("misterios").innerHTML = misterios[quantidadeCliques];
