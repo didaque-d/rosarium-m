@@ -30,34 +30,37 @@ const coroa = [
 let quantidadeCliques = 0;
 let qtdCoroa = 0;
 
+function verificarMultiplo(){
+    return quantidadeCliques % 5 === 0;
+}
+
 function avancar() {
     if(quantidadeCliques < 20){
         quantidadeCliques++;
         console.log(quantidadeCliques);
+        document.getElementById('misterios').innerHTML = misterios[quantidadeCliques];
         atualizarBarra(5);
-    }
-    if(quantidadeCliques % 5 == 0 && quantidadeCliques < 20){
-            qtdCoroa++;
-            document.getElementById("coroa").innerHTML = coroa[qtdCoroa];
-            console.log(qtdCoroa);
-        }
         atualizarTela();
+    }
+    const multiplo = verificarMultiplo();
+    if(multiplo && quantidadeCliques < 20){
+        qtdCoroa++;
+        document.getElementById('coroa').innerHTML = coroa[qtdCoroa];
+    }
 }
 
 function voltar() {
+
     if(quantidadeCliques > 0){
         quantidadeCliques--;
+        document.getElementById('misterios').innerHTML = misterios[quantidadeCliques];
         console.log(quantidadeCliques);
     }
-    if(quantidadeCliques == 4){
-        qtdCoroa = 0;
-    }else if(quantidadeCliques == 9){
-        qtdCoroa = 1
+    const multiplo = verificarMultiplo();
+    if(multiplo && quantidadeCliques > 0){
+        qtdCoroa--;
+        document.getElementById('coroa').innerHTML = coroa[qtdCoroa];
     }
-    else if(quantidadeCliques == 14){
-        qtdCoroa = 2;
-    }
-
     atualizarTela();
     atualizarBarra();
 }
