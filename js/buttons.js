@@ -30,8 +30,16 @@ const coroa = [
 let quantidadeCliques = 0;
 let qtdCoroa = 0;
 
-function verificarMultiplo() {
-    return quantidadeCliques % 5 === 0;
+function verificarRange(){
+    if(quantidadeCliques >= 0 && quantidadeCliques <=4){
+        document.getElementById('coroa').innerHTML = coroa[0];
+    }else if(quantidadeCliques >= 5 && quantidadeCliques <=9){
+        document.getElementById('coroa').innerHTML = coroa[1];
+    }else if(quantidadeCliques >= 10 && quantidadeCliques <=14){
+        document.getElementById('coroa').innerHTML = coroa[2];
+    }else{
+        document.getElementById('coroa').innerHTML = coroa[3];
+    }
 }
 
 function avancar() {
@@ -39,14 +47,11 @@ function avancar() {
         quantidadeCliques++;
         console.log(quantidadeCliques);
         document.getElementById('misterios').innerHTML = misterios[quantidadeCliques];
-        atualizarBarra(5);
+        atualizarBarra();
         atualizarTela();
+        verificarRange();
     }
-    const multiplo = verificarMultiplo();
-    if (multiplo && quantidadeCliques < 20) {
-        qtdCoroa++;
-        document.getElementById('coroa').innerHTML = coroa[qtdCoroa];
-    }
+    
 }
 
 function voltar() {
@@ -56,13 +61,10 @@ function voltar() {
         document.getElementById('misterios').innerHTML = misterios[quantidadeCliques];
         console.log(quantidadeCliques);
     }
-    const multiplo = verificarMultiplo();
-    if (multiplo && quantidadeCliques > 0) {
-        qtdCoroa--;
-        document.getElementById('coroa').innerHTML = coroa[qtdCoroa];
-    }
+    
     atualizarTela();
     atualizarBarra();
+    verificarRange();
 }
 //teste
 function atualizarTela() {
@@ -83,6 +85,7 @@ function retroceder() {
     document.getElementsByClassName('ocultar')[0].style.display = "none";
     atualizarBarra();
     atualizarTela();
+    verificarRange();
 }
 function mostrarTela1() {
     document.getElementById("inicio").style.display = "block";
@@ -136,7 +139,7 @@ function remover() {
     console.log(index);
 }
 
-function atualizarBarra(valor) {
+function atualizarBarra() {
     valor = 5 * quantidadeCliques;
     document.getElementById("barra-progresso").style.width = valor + "%";
     if (quantidadeCliques == 20) {
