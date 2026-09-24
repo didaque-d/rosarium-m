@@ -173,6 +173,7 @@ blockquote{
     background-color: white;
     z-index: 2;
     text-align: center;
+    overflow: hidden;
 }
 #intro header{
     display: flex;

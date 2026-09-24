@@ -183,9 +183,12 @@ function escolherCoroa() {
 escolherCoroa();
 
 function confirmarCoroa() {
-    
     document.getElementById("intro").style.display = "none";
     atualizarTela();
     atualizarBarra();
     verificarRange();
+}
+
+function mostrarIntro(){
+    document.getElementById("intro").style.display = "block";
 }
