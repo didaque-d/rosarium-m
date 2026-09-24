@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +9,22 @@
 </head>
 
 <body>
+    <section id="intro">
+        <header>
+            <img src="img/logo.svg" alt="">
+        </header>
+        <h1>Olá, seja bem-vindo!</h1>
+        <label>Escolha a coroa que deseja contemplar:</label>
+        <div class="opt">
+            <button value="0">Gozosos</button>
+            <button value="1">Luminosos</button>
+            <button value="2">Dolorosos</button>
+            <button value="3">Gloriosos</button>
+        </div>
+        <div class="confirmar">
+            <button onclick="confirmarCoroa()">Confirmar</button>
+        </div>
+    </section>
     <header>
         <a href="#" onclick="mostrarTela1()"><img src="img/logo.svg" alt=""></a>
     </header>
@@ -18,6 +33,7 @@
         <a href="#" onclick="mostrarTela2()"><img src="img/list-task.svg" alt=""></a>
         <a href="#" onclick="mostrarTela3()"><img src="img/info-circle.svg" alt=""></a>
     </nav>
+    
     <main id="inicio">
         <h2 id="coroa">Mistérios Gozosos</h2>
         <p id="misterios">Anúncio do Anjo</p>

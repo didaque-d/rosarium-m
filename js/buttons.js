@@ -31,14 +31,14 @@ const coroa = [
 let quantidadeCliques = 0;
 let qtdCoroa = 0;
 
-function verificarRange(){
-    if(quantidadeCliques >= 0 && quantidadeCliques <=4){
+function verificarRange() {
+    if (quantidadeCliques >= 0 && quantidadeCliques <= 4) {
         document.getElementById('coroa').innerHTML = coroa[0];
-    }else if(quantidadeCliques >= 5 && quantidadeCliques <=9){
+    } else if (quantidadeCliques >= 5 && quantidadeCliques <= 9) {
         document.getElementById('coroa').innerHTML = coroa[1];
-    }else if(quantidadeCliques >= 10 && quantidadeCliques <=14){
+    } else if (quantidadeCliques >= 10 && quantidadeCliques <= 14) {
         document.getElementById('coroa').innerHTML = coroa[2];
-    }else{
+    } else {
         document.getElementById('coroa').innerHTML = coroa[3];
     }
 }
@@ -52,7 +52,7 @@ function avancar() {
         atualizarTela();
         verificarRange();
     }
-    
+
 }
 
 function voltar() {
@@ -62,7 +62,7 @@ function voltar() {
         document.getElementById('misterios').innerHTML = misterios[quantidadeCliques];
         console.log(quantidadeCliques);
     }
-    
+
     atualizarTela();
     atualizarBarra();
     verificarRange();
@@ -76,7 +76,7 @@ function atualizarTela() {
         document.getElementsByClassName('imagens')[0].style.right = posicao + '%';
     }
     console.log(posicao);
-    if (quantidadeCliques == 1) {
+    if (quantidadeCliques > 1) {
         document.getElementsByClassName('ocultar')[0].style.display = 'block';
     }
 }
@@ -153,3 +153,39 @@ function atualizarBarra() {
     }
 }
 
+function escolherCoroa() {
+
+    const container = document.querySelector('.opt');
+
+    container.addEventListener('click', (event) => {
+        if (event.target.tagName === 'BUTTON') {
+            const valor = event.target.value;
+            const texto = event.target.textContext;
+            console.log(valor);
+            if (valor == 0) {
+                quantidadeCliques = 0;
+                console.log("misterio 1");
+            } else if (valor == 1) {
+                quantidadeCliques = 5;
+                console.log("misterio 2");
+            } else if (valor == 2) {
+                quantidadeCliques = 10;
+                console.log("misterio 3");
+            } else {
+                quantidadeCliques = 15;
+                console.log("misterio 4");
+            }
+        }
+
+    });
+
+}
+escolherCoroa();
+
+function confirmarCoroa() {
+    
+    document.getElementById("intro").style.display = "none";
+    atualizarTela();
+    atualizarBarra();
+    avancar();
+}
