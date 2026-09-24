@@ -187,4 +187,5 @@ function confirmarCoroa() {
     document.getElementById("intro").style.display = "none";
     atualizarTela();
     atualizarBarra();
+    verificarRange();
 }
