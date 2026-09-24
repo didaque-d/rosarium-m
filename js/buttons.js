@@ -28,7 +28,7 @@ const coroa = [
     "Mistérios Gloriosos"
 ];
 
-let quantidadeCliques = Number(localStorage.getItem('clique')) || 0;
+let quantidadeCliques = 0;
 let qtdCoroa = 0;
 
 function verificarRange(){
@@ -145,26 +145,11 @@ function atualizarBarra() {
     document.getElementById("barra-progresso").style.width = valor + "%";
     if (quantidadeCliques == 20) {
         document.getElementById("barra").style.borderColor = "green";
-        document.getElementById("barra-progresso").style.backgroundColor = "green";
+        document.getElementById("barra-progresso").style.backgroundImage = "linear-gradient(to right, green, green";
     }
     else {
         document.getElementById("barra").style.borderColor = "lightskyblue";
-        document.getElementById("barra-progresso").style.backgroundColor = "lightskyblue";
+        document.getElementById("barra-progresso").style.backgroundImage = "linear-gradient(to right, lightskyblue, darkblue";
     }
 }
 
-function storage(){
-    localStorage.setItem('clique', quantidadeCliques);
-    console.log('Clique salvo: ' + quantidadeCliques);
-        
-}
-storage();
-
-function inicializar() {
-    atualizarBarra();
-    atualizarTela();
-    verificarRange();
-}
-
-// Executa a inicialização assim que o script carregar
-inicializar();

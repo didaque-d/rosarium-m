@@ -1,8 +1,10 @@
+:root{
+    --cor-de-fundo: #a59871;
+}
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    --cor-de-fundo: #a59871;
+    box-sizing: border-box;   
 }
 body{
     background-color: rgb(230, 230, 230);
@@ -89,7 +91,9 @@ main{
 }
 
 .controle button:hover{
-    background-color: var(--cor-de-fundo);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    text-decoration: underline;
+    transition: 0.3s;
 }
 #tela-lista{
     margin-bottom: 10dvh;
@@ -230,7 +234,6 @@ blockquote{
     border-radius: 20px;
 }
 #barra-progresso{
-    background-color: lightskyblue;
     width: 0%;
     padding: 3px;
     border-radius: 20px;
