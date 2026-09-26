@@ -27,7 +27,10 @@ const coroa = [
     "Mistérios Dolorosos",
     "Mistérios Gloriosos"
 ];
-
+const frases = [
+    "Paz de Cristo!",
+    "Salve Maria Imaculada!" 
+]
 let quantidadeCliques = 0;
 let qtdCoroa = 0;
 
@@ -192,3 +195,17 @@ function confirmarCoroa() {
 function mostrarIntro(){
     document.getElementById("intro").style.display = "block";
 }
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+console.log(getRandomInt(3));
+// Expected output: 0, 1 or 2
+
+if(getRandomInt(2) == 1){
+    document.getElementById("bemVindo").innerHTML = frases[0];
+}else{
+    document.getElementById("bemVindo").innerHTML = frases[1];
+}
+
