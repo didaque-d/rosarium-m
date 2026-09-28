@@ -59,6 +59,8 @@ main{
     padding: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.300);
     overflow: hidden;
+    position: relative;
+    animation: transition 0.3s linear;
 }
 .imagens{
     aspect-ratio: 1 / 1;
@@ -247,14 +249,6 @@ blockquote{
         margin: 0;
     }
 
-    @keyframes logo{
-    from{
-        max-width: 100%;
-    }
-    to{
-        max-width: 15%;
-    }
-}
 }
 @media screen and (-webkit-min-device-pixel-ratio: 3.0) {
     main{
@@ -279,4 +273,15 @@ blockquote{
     padding: 3px;
     border-radius: 20px;
     transition: 1s;
+}
+
+/*animações*/
+
+@keyframes transition {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 100;
+    }
 }
