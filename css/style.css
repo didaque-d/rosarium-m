@@ -221,7 +221,7 @@ blockquote{
         max-width: 10%;
     }
     main{
-        margin: 10px 500px 20px 500px;
+        margin: 1% 35% 5% 35%;
         max-width: auto;
     }
     .controle{
@@ -247,6 +247,9 @@ blockquote{
         border-radius: 0px;
         box-shadow: none;
         margin: 0;
+    }
+    #intro .opt, #intro .confirmar{
+        padding: 0% 35% 0% 35%;
     }
 
 }
